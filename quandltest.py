@@ -15,7 +15,6 @@ all_data = wti.join(uso['Close'])
 all_data.columns = ['WTI', 'USO']
 
 all_data.plot()
-# plt.show()
 
 plt.savefig("all_data.png", bbox_inches='tight')
 
