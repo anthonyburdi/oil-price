@@ -7,21 +7,30 @@ import matplotlib.pyplot as plt
 authtoken = "S37c_dpxR7yWFkzz8mr_"
 
 # wti = Quandl.get("WORLDBANK/WLD_CRUDE_WTI", authtoken="S37c_dpxR7yWFkzz8mr_")
-wti = Quandl.get("DOE/RWTC", authtoken=authtoken)
-uso = Quandl.get("GOOG/NYSE_USO", authtoken=authtoken)
 
-all_data = wti.join(uso['Close'])
+WTI = Quandl.get("DOE/RWTC", authtoken=authtoken)
+USO = Quandl.get("GOOG/NYSE_USO", authtoken=authtoken)
+DBO = Quandl.get("GOOG/NYSE_DBO", authtoken=authtoken)
+DBE = Quandl.get("GOOG/NYSE_DBE", authtoken=authtoken)
 
-all_data.columns = ['WTI', 'USO']
+first_join = WTI.join(USO['Close'])
+first_join.columns = ['WTI', 'USO']
+second_join = first_join.join(DBO['Close'])
+second_join.columns = ['WTI', 'USO', 'DBO']
+third_join = second_join.join(DBE['Close'])
+third_join.columns = ['WTI', 'USO', 'DBO', 'DBE']
 
-all_data.plot()
-
-plt.savefig("all_data.png", bbox_inches='tight')
+all_data = third_join
 
 recent_data = all_data.tail(90)
 recent_data.plot()
+plt.savefig("recent.png", bbox_inches='tight')
 plt.show()
-plt.savefig("recent.png")
+
+all_data.plot()
+plt.savefig("all_data.png", bbox_inches='tight')
+plt.show()
+
 
 """USO	United States Oil Fund, LP	$19.62	+2.29%	$1,132,074	27,498,463	-3.63%
 OIL	iPath Exchange Traded Notes S&P GSCI Crude Oil Total Return Index Medium-Term Notes Series A	$12.01	+2.91%	$736,354	3,334,829	-4.23%
