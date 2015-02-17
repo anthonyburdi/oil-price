@@ -1,0 +1,249 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"current",
+				"currentP2Moves"
+			],
+			[
+				"avail",
+				"availableMoves"
+			],
+			[
+				"pla",
+				"player2"
+			],
+			[
+				"ava",
+				"availableMoves"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 147.0,
+		"selected_items":
+		[
+			[
+				"git pus",
+				"Git: Push"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"qui",
+				"Git: Quick Commit"
+			],
+			[
+				"q",
+				"Git: Quick Commit"
+			],
+			[
+				"pu",
+				"Git: Push"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"quic",
+				"Git: Quick Commit"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"build",
+				"Build: Build"
+			],
+			[
+				"quick",
+				"Git: Quick Commit"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/anthonyburdi/Desktop/Oil"
+	],
+	"file_history":
+	[
+		"/Users/anthonyburdi/Desktop/Oil/quandltest.py",
+		"/Users/anthonyburdi/Desktop/Oil/index.html",
+		"/Volumes/MUSICBOX/config/settings.ini",
+		"/Users/anthonyburdi/Desktop/Oil ETF Prices/quandltest.py",
+		"/Users/anthonyburdi/Documents/gitolite-admin/gitolite-admin/conf/gitolite.conf",
+		"/Users/anthonyburdi/Desktop/Oil ETF Prices/index.html",
+		"/Users/anthonyburdi/Documents/gitolite-admin/gitolite-admin/keydir/aburdi-linode.pub",
+		"/Users/anthonyburdi/Desktop/Test Quandl/quandltest.py",
+		"/Users/anthonyburdi/Documents/BTSync Configuration/ManhattanNASConfig/active_software/config/btsync.config",
+		"/Users/anthonyburdi/Desktop/tictactoe_computer.py",
+		"/Users/anthonyburdi/Downloads/0. Introduction Subtitles/3 - Choices.srt",
+		"/Users/anthonyburdi/Downloads/0. Introduction Subtitles/2 - Late Night Debugging.srt",
+		"/Users/anthonyburdi/Downloads/0. Introduction Subtitles/1 - Overview of Course.srt",
+		"/Users/anthonyburdi/Documents/lightstring/python/examples/workout_main.py",
+		"/Users/anthonyburdi/Documents/lightstring/python/examples/clock_helper_functions.py",
+		"/Users/anthonyburdi/Documents/HackerSchoolAppCracklePop.py"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"null"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"None"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 271.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 397.0
+	},
+	"project": "oil.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 68.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
