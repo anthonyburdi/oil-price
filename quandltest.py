@@ -8,10 +8,14 @@ authtoken = "S37c_dpxR7yWFkzz8mr_"
 
 # wti = Quandl.get("WORLDBANK/WLD_CRUDE_WTI", authtoken="S37c_dpxR7yWFkzz8mr_")
 
-WTI = Quandl.get("DOE/RWTC", authtoken=authtoken)
-USO = Quandl.get("GOOG/NYSE_USO", authtoken=authtoken)
-DBO = Quandl.get("GOOG/NYSE_DBO", authtoken=authtoken)
-DBE = Quandl.get("GOOG/NYSE_DBE", authtoken=authtoken)
+# trim_start=trim_start, trim_end=trim_end
+trim_start="2014-01-01"
+# trim_end="yyyy-mm-dd"
+
+WTI = Quandl.get("DOE/RWTC", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
+USO = Quandl.get("GOOG/NYSE_USO", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
+DBO = Quandl.get("GOOG/NYSE_DBO", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
+DBE = Quandl.get("GOOG/NYSE_DBE", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
 
 first_join = WTI.join(USO['Close'])
 first_join.columns = ['WTI', 'USO']
