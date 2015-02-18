@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"__",
+				"__name__"
+			],
+			[
+				"data",
+				"dataList"
+			],
+			[
 				"current",
 				"currentP2Moves"
 			],
@@ -27,9 +35,25 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 147.0,
+		"height": 87.0,
 		"selected_items":
 		[
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git ",
+				"Git: Commit"
+			],
+			[
+				"git add ",
+				"Git: Add..."
+			],
+			[
+				"q",
+				"Git: Quick Commit"
+			],
 			[
 				"git pus",
 				"Git: Push"
@@ -44,10 +68,6 @@
 			],
 			[
 				"qui",
-				"Git: Quick Commit"
-			],
-			[
-				"q",
 				"Git: Quick Commit"
 			],
 			[
@@ -79,7 +99,7 @@
 				"Git: Quick Commit"
 			]
 		],
-		"width": 575.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -104,6 +124,7 @@
 	"file_history":
 	[
 		"/Users/anthonyburdi/Desktop/Oil/quandltest.py",
+		"/Users/anthonyburdi/Desktop/Oil/.gitignore",
 		"/Users/anthonyburdi/Desktop/Oil/index.html",
 		"/Volumes/MUSICBOX/config/settings.ini",
 		"/Users/anthonyburdi/Desktop/Oil ETF Prices/quandltest.py",
@@ -241,7 +262,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 68.0,
+	"side_bar_width": 336.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

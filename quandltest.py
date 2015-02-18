@@ -1,22 +1,40 @@
 import Quandl
 import pandas as pd
 import numpy as np
-
 import matplotlib.pyplot as plt
 
-authtoken = "S37c_dpxR7yWFkzz8mr_"
+# pull from config.py - you need to create your own with authtoken = "YOUR QUANDL KEY"
+import config
+authtoken = config.authtoken
 
-# wti = Quandl.get("WORLDBANK/WLD_CRUDE_WTI", authtoken="S37c_dpxR7yWFkzz8mr_")
-
-# trim_start=trim_start, trim_end=trim_end
 trim_start="2014-01-01"
-# trim_end="yyyy-mm-dd"
+# trim_end="yyyy-mm-dd" # Not used so data is pulled up to current day
 
+# Pull data from Quandl
 WTI = Quandl.get("DOE/RWTC", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
 USO = Quandl.get("GOOG/NYSE_USO", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
 DBO = Quandl.get("GOOG/NYSE_DBO", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
 DBE = Quandl.get("GOOG/NYSE_DBE", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
 
+# Attempt to automate these joins failing when trying to assign back to left hand data.
+# x = x.join(y) does not seem to work but z = x.join(y) works
+# dataList = [WTI,USO,DBO,DBE]
+# cols = ["WTI","USO","DBO","DBE"]
+
+# # Add the first two col names to cols
+# # cols = [dataList[0].__name__,dataList[1].__name__]
+# # Join the first two data items:
+# all_data = dataList[0].join(dataList[1]['Close'])
+
+# # Join the rest of the data items:
+# for i in range(2,len(dataList)-1):
+# 	# cols.append(dataList[i].__name__)
+# 	all_data = all_data.join(dataList[i]['Close'])
+
+# # Replace data column titles with what we want
+# all_data.columns = cols
+
+# This is ugly but it works:
 first_join = WTI.join(USO['Close'])
 first_join.columns = ['WTI', 'USO']
 second_join = first_join.join(DBO['Close'])
@@ -35,7 +53,7 @@ all_data.plot()
 plt.savefig("all_data.png", bbox_inches='tight')
 plt.show()
 
-
+# Other ETFs to track
 """USO	United States Oil Fund, LP	$19.62	+2.29%	$1,132,074	27,498,463	-3.63%
 OIL	iPath Exchange Traded Notes S&P GSCI Crude Oil Total Return Index Medium-Term Notes Series A	$12.01	+2.91%	$736,354	3,334,829	-4.23%
 UNG	United States Natural Gas Fund, LP	$14.22	+2.45%	$701,223	13,312,313	-3.72%
