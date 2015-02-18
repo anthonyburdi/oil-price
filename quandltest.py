@@ -16,42 +16,40 @@ USO = Quandl.get("GOOG/NYSE_USO", authtoken=authtoken, transformation="normalize
 DBO = Quandl.get("GOOG/NYSE_DBO", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
 DBE = Quandl.get("GOOG/NYSE_DBE", authtoken=authtoken, transformation="normalize", trim_start=trim_start)
 
-# Attempt to automate these joins failing when trying to assign back to left hand data.
-# x = x.join(y) does not seem to work but z = x.join(y) works
-# dataList = [WTI,USO,DBO,DBE]
-# cols = ["WTI","USO","DBO","DBE"]
+# Create lists of data
+dataList = [WTI,USO,DBO,DBE]
+cols = ["WTI","USO","DBO","DBE"]
 
-# # Add the first two col names to cols
-# # cols = [dataList[0].__name__,dataList[1].__name__]
-# # Join the first two data items:
-# all_data = dataList[0].join(dataList[1]['Close'])
+# Change naming
+WTI.columns = ['WTI']
 
-# # Join the rest of the data items:
-# for i in range(2,len(dataList)-1):
-# 	# cols.append(dataList[i].__name__)
-# 	all_data = all_data.join(dataList[i]['Close'])
+# Change naming and make first join
+USO = USO['Close']
+USO.name = 'USO'
+all_data = WTI.join(USO)
 
-# # Replace data column titles with what we want
-# all_data.columns = cols
+# Break off first two data items
+dataList = dataList[2:]
+cols = cols[2:]
 
-# This is ugly but it works:
-first_join = WTI.join(USO['Close'])
-first_join.columns = ['WTI', 'USO']
-second_join = first_join.join(DBO['Close'])
-second_join.columns = ['WTI', 'USO', 'DBO']
-third_join = second_join.join(DBE['Close'])
-third_join.columns = ['WTI', 'USO', 'DBO', 'DBE']
+# Join rest of data
+for idx in range(len(dataList)):
 
-all_data = third_join
+	dataList[idx] = dataList[idx]['Close']
+	dataList[idx].name = cols[idx]
+	all_data = all_data.join(dataList[idx])
 
+# Create plot and save to disk of last 90 days
 recent_data = all_data.tail(90)
 recent_data.plot()
 plt.savefig("recent.png", bbox_inches='tight')
-plt.show()
+# plt.show()
+
+# Create plot and save to disk of data since trim_start
 
 all_data.plot()
 plt.savefig("all_data.png", bbox_inches='tight')
-plt.show()
+# plt.show()
 
 # Other ETFs to track
 """USO	United States Oil Fund, LP	$19.62	+2.29%	$1,132,074	27,498,463	-3.63%
